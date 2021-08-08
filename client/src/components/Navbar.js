@@ -3,37 +3,29 @@ const Navbar = () => {
   return (
  
 
-    <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-      <Link to="/" className="navbar-brand ">
-       Apni Dukaan
-      </Link>
-      <div className="collpase navbar-collapse">
-        {/* <ul className="navbar-nav mr-auto"> */}
-          {/* <li className="navbar-item">
-            <Link to="/" className="nav-link">
-              Exercises
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/create" className="nav-link">
-              Create Exercise Log
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link to="/user" className="nav-link">
-              Create User
-            </Link>
-          </li> */}
-          {/* <li className ="navbar-item float-right text-right">
-              <button className='btn btn-outline-light '>Login</button>
-          </li>
-        </ul> */}
-        {/* <button className='btn btn-outline-light float-right'>Login</button> */}
+    <nav className=" bg-gray-700 w-full sticky top-0">
+      <div className='  flex justify-between p-2 '>
+
+        <div className=" border-yellow-500 ">
+          <Link to="/" className="">
+          <img src="images/logo.png" className="h-10  rounded-full" />
+          </Link>
+        </div>
+        
+        {/* <div>search bar</div> */}
+        
+        <div className=' flex items-center  '> 
+          <Link to ="/login"><button 
+          className='px-2  h-8 rounded-xl mx-1 text-black bg-gray-50 hover:bg-gray-200 '
+          >Login </button></Link>
+
+          <Link to ="/register"><button 
+          className='px-2  h-8 text-black rounded-xl mx-1 bg-gray-50 hover:bg-gray-200'
+          >Register</button></Link>
+        </div>
       </div>
-      <div className='float-right'> 
-      <Link to ="/login"><button className='btn btn-outline-light m-1'>Login </button></Link>
-      <Link to ="/register"><button className='btn btn-outline-light m-1'>Register</button></Link>
-      </div>
+      
+
     </nav>
 
 
