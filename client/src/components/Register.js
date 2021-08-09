@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import Footer from "./Footer";
 import FacebookIcon from '@material-ui/icons/Facebook';
 
 
@@ -36,12 +35,12 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsPending(true);
+    //setIsPending(true);
     const user = { name, mobile, email, password };
-
+      
     axios
-      .post("http://localhost:5000/register", user)
-      .then((res) => console.log(res.data));
+      .post("http://localhost:4000/register", user)
+      .then((res) => console.log(res.config.data));
     history.push("/");
   };
 
@@ -50,7 +49,6 @@ function Register(props) {
     <div className="md:grid grid-cols-2 divide-x divide-gray-400  mt-6 " >
 
       {/* left side */}
-
       <div className="flex flex-1 justify-center items-center">
         <img src="/images/logo.png" alt="" />
       </div>
@@ -60,7 +58,7 @@ function Register(props) {
       {/* right side */}
       <div className="p-20 ">
 
-        <form onSubmit={handleSubmit} className="flex items-center flex-col my-2 p-2 border rounded-xl ">
+        <form onSubmit={handleSubmit} className="flex items-center flex-col my-2 p-2 sm:border rounded-xl ">
 
           <div className="my-8 text-3xl font-mont">
             Registration Form
@@ -73,12 +71,14 @@ function Register(props) {
             <br />
             <input
               type="text"
-              className="  mt-1 w-auto rounded-full pl-2 outline-none border "
+              className="  mt-1 w-auto rounded-full pl-2 outline-none border text-black text-opacity-75
+              bg-gray-100  "
               id="name"
               placeholder="e.g. Abhilash Tyagi"
               onChange={(e) => {
                 setName(e.target.value);
-              }}
+                //console.log(e.target)
+;              }}
             />
           </div>
 
@@ -88,7 +88,8 @@ function Register(props) {
             <br />
             <input
               type="text"
-              className="mt-1 w-auto rounded-full pl-2 border outline-none"
+              className="mt-1 w-auto rounded-full pl-2 border outline-none text-black text-opacity-75
+              bg-gray-100 "
               id="name"
               placeholder="e.g.9627244116"
               onChange={(e) => {
@@ -103,17 +104,17 @@ function Register(props) {
             <br />
             <input
               type="email"
-              className="mt-1 w-auto rounded-full pl-2 outline-none border"
+              className="mt-1 w-auto rounded-full pl-2 outline-none border text-black text-opacity-75
+              bg-gray-100 "
               id="email"
               aria-describedby="emailHelp"
               placeholder="Enter email"
               onChange={(e) => {
                 setEmail(e.target.value);
+                console.log(e.target.value);
               }}
             />
-            {/* <small id="emailHelp" className="">
-                We'll never share your email with anyone else.
-              </small> */}
+            
           </div>
 
           {/* password */}
@@ -122,7 +123,8 @@ function Register(props) {
             <br />
             <input
               type="password"
-              className="mt-1 w-auto rounded-full pl-2 outline-none border"
+              className="mt-1 w-auto rounded-full pl-2 outline-none border text-black text-opacity-75
+              bg-gray-100 "
               id="password"
               placeholder="Password"
             />
@@ -134,7 +136,8 @@ function Register(props) {
             <br />
             <input
               type="password"
-              className="mt-1 w-auto rounded-full pl-2 outline-none border"
+              className="mt-1 w-auto rounded-full pl-2 outline-none border text-black text-opacity-75
+              bg-gray-100 "
               id="confirmPassword "
               placeholder="Confirm Password"
               onChange={(e) => {
@@ -146,7 +149,8 @@ function Register(props) {
 
 
 
-          <button type="submit" className="bg-blue-500 text-white flex mt-8  border mx-36 px-4 py-1 rounded-full shadow-2xl hover:bg-gray-500">
+          <button type="submit" 
+          className="bg-blue-500 text-white flex mt-8  border mx-36 px-4 py-1 rounded-full shadow-2xl hover:bg-gray-500">
             Register
           </button>
 

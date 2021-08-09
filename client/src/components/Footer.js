@@ -10,7 +10,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const Footer = () => {
   return (
-    <div className='flex flex-1 flex-col mt-36 '>
+    <div className='flex flex-1 flex-col mt-16 '>
       <footer className=" text-center">
         
         <div className='bg-gray-400 ' m>
@@ -18,10 +18,10 @@ const Footer = () => {
         </div>
 
         <div className = "py-2  flex justify-center" >
-          <FooterOption Icon = {FacebookIcon} title = 'Facebook' />
+          <a href="https://www.facebook.com/abhilash.tyagig"><FooterOption Icon = {FacebookIcon} title = 'Facebook' /></a>
           <FooterOption Icon = {TwitterIcon} title = 'Facebook' />
           <FooterOption Icon = {InstagramIcon} title = 'Instagram' />
-          <FooterOption Icon = {LinkedInIcon} title = 'LinkedIn' />
+          <FooterOption Icon = {LinkedInIcon} title = "LinkedIn" />
         </div>
       
 
