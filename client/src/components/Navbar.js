@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 const Navbar = () => {
   return (
  
@@ -31,8 +31,12 @@ const Navbar = () => {
         {/* <button className='btn btn-outline-light float-right'>Login</button> */}
       </div>
       <div className='float-right'> 
-      <Link to ="/login"><button className='btn btn-outline-light m-1'>Login </button></Link>
-      <Link to ="/register"><button className='btn btn-outline-light m-1'>Register</button></Link>
+      {/* <Link to ="/login"><button className='btn btn-outline-light m-1'>Login </button></Link>
+      <Link to ="/register"><button className='btn btn-outline-light m-1'>Register</button></Link> */}
+      <NavLink exact activeClassName="active" to="/"><button className='btn btn-outline-light m-1'>Home </button></NavLink>
+      <NavLink activeClassName="active" to="/login"><button className='btn btn-outline-light m-1'>Login </button></NavLink><small>(Access without token only)</small>
+      <NavLink activeClassName="active" to="/dashboard"><button className='btn btn-outline-light m-1'>Dashboard </button></NavLink><small>(Access with token only)</small>
+      <NavLink activeClassName="active" to ="/register"><button className='btn btn-outline-light m-1'>Register </button></NavLink> 
       </div>
     </nav>
 
